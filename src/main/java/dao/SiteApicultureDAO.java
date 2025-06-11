@@ -1,6 +1,6 @@
 package dao;
 
-//--- Fichier Java : SiteApicultureDAO.java ---
+
 import java.sql.*;
 import java.util.*;
 

@@ -1,5 +1,3 @@
-
-//--- Fichier Java : FermierServlet.java ---
 package servlets;
 
 import dao.FermierDAO;
@@ -16,10 +14,9 @@ import java.util.List;
 
 @WebServlet(urlPatterns = "/fermier")
 public class FermierServlet extends HttpServlet {
- /**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+private static final long serialVersionUID = 1L;
+
+
 private FermierDAO dao;
 
  @Override
@@ -47,7 +44,7 @@ private FermierDAO dao;
 
      try {
          dao.addFermier(f);
-         response.sendRedirect("listFermiers.jsp"); // redirection vers la liste après ajout
+         response.sendRedirect("listFermiers.jsp"); 
      } catch (Exception e) {
          response.getWriter().write("Erreur lors de l'ajout du fermier.");
          e.printStackTrace();
@@ -104,19 +101,19 @@ private FermierDAO dao;
 
 	    try {
 	        if (idStr != null && !idStr.isEmpty()) {
-	            // 🔁 Modification
+	            
 	            int id = Integer.parseInt(idStr);
 	            Fermier f = new Fermier(id, nom, email);
 	            dao.updateFermier(f);
 	        } else {
-	            // ➕ Ajout
+	            
 	            Fermier f = new Fermier(0, email, email);
 	            f.setNom(nom);
 	            f.setEmail(email);
 	            dao.addFermier(f);
 	        }
 
-	        // ✅ Redirection vers la liste des fermiers après POST
+	        
 	        response.sendRedirect(request.getContextPath() + "/fermier");
 
 	    } catch (Exception e) {

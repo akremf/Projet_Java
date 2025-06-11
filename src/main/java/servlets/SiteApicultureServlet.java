@@ -1,4 +1,3 @@
-// --- Fichier Java : SiteApicultureServlet.java ---
 package servlets;
 
 import dao.SiteApicultureDAO;
@@ -14,9 +13,7 @@ import java.util.List;
 
 @WebServlet("/site")
 public class SiteApicultureServlet extends HttpServlet {
-    /**
-	 * 
-	 */
+  
 	private static final long serialVersionUID = 1L;
 	private SiteApicultureDAO dao;
 

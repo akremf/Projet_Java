@@ -1,6 +1,6 @@
 package dao;
 
-//--- Fichier Java : FermeDAO.java ---
+
 import java.sql.*;
 import java.util.*;
 

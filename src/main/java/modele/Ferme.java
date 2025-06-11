@@ -1,6 +1,6 @@
 package modele;
 
-//--- Fichier Java : Ferme.java ---
+
 
 
 public class Ferme {
@@ -9,10 +9,10 @@ public class Ferme {
 	private String localisation;
 	private int idFermier;
 
- // Constructeurs
+ // Constructeur
 
 
-	public Ferme(int id, String nom, String localisation, int idFermier) {
+public Ferme(int id, String nom, String localisation, int idFermier) {
 		this.id = id;
 		this.nom = nom;
 		this.localisation = localisation;

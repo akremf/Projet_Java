@@ -1,6 +1,7 @@
 package modele;
 
-//--- Fichier Java : SiteApiculture.java ---
+
+
 public class SiteApiculture {
  private int id;
  private double latitude;
@@ -9,7 +10,7 @@ public class SiteApiculture {
  private String dateMiseEnService;
  private int idFerme;
 
- // Constructeurs
+ // Constructeur
 
 
  public SiteApiculture(int id, double latitude, double longitude, double altitude, String dateMiseEnService, int idFerme) {

@@ -1,4 +1,3 @@
-// --- Fichier Java : FermeServlet.java ---
 package servlets;
 
 import dao.FermeDAO;
@@ -14,9 +13,7 @@ import java.util.List;
 
 @WebServlet("/ferme")
 public class FermeServlet extends HttpServlet {
-    /**
-	 * 
-	 */
+   
 	private static final long serialVersionUID = 1L;
 	private FermeDAO dao;
 
@@ -45,7 +42,7 @@ public class FermeServlet extends HttpServlet {
 
         try {
             dao.addFerme(f);
-            response.sendRedirect("listFermes.jsp"); // à adapter selon la JSP de redirection
+            response.sendRedirect("listFermes.jsp"); 
         } catch (Exception e) {
             response.getWriter().write("Erreur lors de l'ajout de la ferme.");
             e.printStackTrace();

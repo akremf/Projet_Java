@@ -2,13 +2,13 @@ package modele;
 
 
 
-//--- Fichier Java : Fermier.java ---
+
 public class Fermier {
 	private int id;
 	private String nom;
 	private String email;
 
- // Constructeurs
+
 
 
 public Fermier(int id, String nom, String email) {
