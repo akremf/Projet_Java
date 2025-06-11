@@ -71,5 +71,25 @@ public class FermierDAO {
      }
      return list;
  }
+ 
+ //recherche d'un fermier par ID
+ public Fermier getFermierById(int id) throws SQLException {
+	    Fermier f = null;
+	    String sql = "SELECT * FROM fermier WHERE id = ?";
+	    PreparedStatement ps = con.prepareStatement(sql);
+	    ps.setInt(1, id);
+	    ResultSet rs = ps.executeQuery();
+
+	    if (rs.next()) {
+	        f = new Fermier(id, sql, sql);
+	        f.setId(rs.getInt("id"));
+	        f.setNom(rs.getString("nom"));
+	        f.setEmail(rs.getString("email"));
+	    }
+
+	    return f;
+	}
+
+ 
 }
 

@@ -1,8 +1,6 @@
 package modele;
 
 
-
-
 public class Fermier {
 	private int id;
 	private String nom;

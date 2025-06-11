@@ -1,46 +1,70 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page import="java.util.*" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Dashboard 2 - Production de Miel</title>
+    <title>Dashboard – Production de miel</title>
     <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    
+
     <script type="text/javascript">
-        // Charger la librairie Google Charts
+        // Charger Google Charts
         google.charts.load('current', {packages: ['corechart']});
         google.charts.setOnLoadCallback(drawChart);
 
-        // Fonction de dessin du graphique
         function drawChart() {
+            // Données simulées (nom ferme, quantité miel)
             var data = google.visualization.arrayToDataTable([
-                ['Ferme', 'Production (kg)'],
+                ['Ferme', 'Kg de miel'],
                 ['Ferme A', 120],
-                ['Ferme B', 95],
-                ['Ferme C', 60],
-                ['Ferme D', 135]
+                ['Ferme B', 85],
+                ['Ferme C', 150],
+                ['Ferme D', 60]
             ]);
 
             var options = {
                 title: 'Production de miel par ferme',
-                hAxis: {
-                    title: 'Ferme'
-                },
-                vAxis: {
-                    title: 'Kg de miel',
-                    minValue: 0
-                },
-                legend: 'none',
-                colors: ['#f4b400']
+                hAxis: {title: 'Ferme'},
+                vAxis: {title: 'Quantité (kg)'},
+                colors: ['#f1c40f'],
+                legend: {position: 'none'},
+                animation: {
+                    startup: true,
+                    duration: 1000,
+                    easing: 'out'
+                }
             };
 
             var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
             chart.draw(data, options);
         }
     </script>
+
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            text-align: center;
+            background-color: #f4f7f9;
+            padding: 30px;
+        }
+
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+
+        #chart_div {
+            width: 90%;
+            height: 500px;
+            margin: auto;
+        }
+    </style>
 </head>
 <body>
-    <h2 style="text-align:center;">Tableau de bord - Production de miel</h2>
-    <div id="chart_div" style="width: 800px; height: 400px; margin: auto;"></div>
+
+<h2>Production de miel par ferme</h2>
+
+<div id="chart_div"></div>
+
 </body>
 </html>

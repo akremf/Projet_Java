@@ -44,7 +44,7 @@ private FermierDAO dao;
 
      try {
          dao.addFermier(f);
-         response.sendRedirect("listFermiers.jsp"); 
+         response.sendRedirect(request.getContextPath() + "/fermier"); 
      } catch (Exception e) {
          response.getWriter().write("Erreur lors de l'ajout du fermier.");
          e.printStackTrace();

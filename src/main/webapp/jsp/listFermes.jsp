@@ -1,10 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page import="java.util.List, modele.Fermier" %>
+<%@ page import="java.util.List, modele.Ferme" %>
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Liste des fermiers</title>
+    <title>Liste des fermes</title>
     <style>
         body {
             font-family: 'Segoe UI', sans-serif;
@@ -62,28 +62,30 @@
 </head>
 <body>
 
-<h2>Liste des fermiers</h2>
+<h2>Liste des fermes</h2>
 
 <table>
     <tr>
         <th>ID</th>
         <th>Nom</th>
-        <th>Email</th>
+        <th>Localisation</th>
+        <th>ID Fermier</th>
         <th>Actions</th>
     </tr>
     <%
-        List<Fermier> fermiers = (List<Fermier>) request.getAttribute("fermiers");
-        if (fermiers != null && !fermiers.isEmpty()) {
-            for (Fermier f : fermiers) {
+        List<Ferme> fermes = (List<Ferme>) request.getAttribute("fermes");
+        if (fermes != null && !fermes.isEmpty()) {
+            for (Ferme f : fermes) {
     %>
     <tr>
         <td><%= f.getId() %></td>
         <td><%= f.getNom() %></td>
-        <td><%= f.getEmail() %></td>
+        <td><%= f.getLocalisation() %></td>
+        <td><%= f.getIdFermier() %></td>
         <td class="actions">
-            <a class="edit-btn" href="<%= request.getContextPath() %>/jsp/updateFermier.jsp?id=<%= f.getId() %>">Modifier</a>
-            <a class="delete-btn" href="<%= request.getContextPath() %>/fermier?action=delete&id=<%= f.getId() %>"
-               onclick="return confirm('Supprimer ce fermier ?');">Supprimer</a>
+            <a class="edit-btn" href="<%= request.getContextPath() %>/jsp/updateFerme.jsp?id=<%= f.getId() %>">Modifier</a>
+            <a class="delete-btn" href="<%= request.getContextPath() %>/ferme?action=delete&id=<%= f.getId() %>"
+               onclick="return confirm('Supprimer cette ferme ?');">Supprimer</a>
         </td>
     </tr>
     <%
@@ -91,13 +93,13 @@
         } else {
     %>
     <tr>
-        <td colspan="4">Aucun fermier enregistré.</td>
+        <td colspan="5">Aucune ferme enregistrée.</td>
     </tr>
     <% } %>
 </table>
 
 <div style="text-align: center;">
-    <a class="add-btn" href="<%= request.getContextPath() %>/jsp/createFermier.jsp">➕ Ajouter un nouveau fermier</a>
+    <a class="add-btn" href="<%= request.getContextPath() %>/jsp/createFerme.jsp">➕ Ajouter une nouvelle ferme</a>
 </div>
 
 </body>
